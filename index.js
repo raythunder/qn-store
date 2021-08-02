@@ -46,7 +46,7 @@ class QiniuStore extends StorageBase {
         }, function(err, result) {
           console.log(logPrefix, result);
           // console.log('[' + err.code + '] ' + err.name);
-          err ? reject(err) : resolve(result.url);
+          err ? reject(err) : resolve(result.url.replace('http://qiniu','https://md'));
         });
       }));
     });
